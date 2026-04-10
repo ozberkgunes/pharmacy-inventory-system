@@ -1,0 +1,6 @@
+{
+  "env": {
+    "VIRTUAL_ENV": "/Users/ozberkgunes/Desktop/github/pharmacy-inventory-system/.venv",
+    "PATH": "/Users/ozberkgunes/Desktop/github/pharmacy-inventory-system/.venv/bin:/Users/ozberkgunes/.local/bin:/Library/Frameworks/Python.framework/Versions/3.14/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+  }
+}
