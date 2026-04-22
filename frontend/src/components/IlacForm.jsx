@@ -50,7 +50,7 @@ export function IlacForm({ mevcutIlac, onBasari, onIptal }) {
 
         <label>
           İlaç Adı
-          <input name="ad" value={form.ad} onChange={degistir} required disabled={duzenleme} />
+          <input name="ad" value={form.ad} onChange={degistir} required />
         </label>
         <label>
           Raf

@@ -46,11 +46,11 @@ def ilac_ekle(ad: str, raf: str, sira: str, recete_gerekli: bool) -> None:
         )
 
 
-def ilac_guncelle(ad: str, raf: str, sira: str, recete_gerekli: bool) -> None:
+def ilac_guncelle(ad: str, yeni_ad: str, raf: str, sira: str, recete_gerekli: bool) -> None:
     with get_connection() as conn:
         conn.execute(
-            "UPDATE ilaclar SET raf = ?, sira = ?, recete_gerekli = ? WHERE ad = ?",
-            (raf, sira, int(recete_gerekli), ad),
+            "UPDATE ilaclar SET ad = ?, raf = ?, sira = ?, recete_gerekli = ? WHERE ad = ?",
+            (yeni_ad, raf, sira, int(recete_gerekli), ad),
         )
 
 

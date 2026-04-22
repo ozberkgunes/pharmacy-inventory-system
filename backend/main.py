@@ -58,8 +58,10 @@ def ilac_ekle(veri: IlacGirdi):
 def ilac_guncelle(ad: str, veri: IlacGirdi):
     if not db.ilac_ara(ad):
         raise HTTPException(status_code=404, detail="İlaç bulunamadı")
-    db.ilac_guncelle(ad, veri.raf, veri.sira, veri.recete_gerekli)
-    return {"mesaj": f"'{ad}' güncellendi"}
+    if veri.ad != ad and db.ilac_ara(veri.ad):
+        raise HTTPException(status_code=409, detail="Bu isimde bir ilaç zaten kayıtlı")
+    db.ilac_guncelle(ad, veri.ad, veri.raf, veri.sira, veri.recete_gerekli)
+    return {"mesaj": f"'{veri.ad}' güncellendi"}
 
 
 @app.delete("/ilaclar/{ad}")
